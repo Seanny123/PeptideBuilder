@@ -1,5 +1,18 @@
 from setuptools import setup
 
+
+INSTALL_REQUIRES = [
+    'Biopython'
+]
+
+TEST_REQUIRES = [
+    # testing and coverage
+    'pytest', 'coverage', 'pytest-cov',
+    # to be able to run `python setup.py checkdocs`
+    'collective.checkdocs', 'pygments',
+]
+
+
 with open("README.md", "r") as f:
     long_description = f.read()
 
@@ -17,10 +30,13 @@ setup(
     author_email="Matthew.Tien89@gmail.com",
     description="Create peptide PDB files with specified geometry",
     long_description=long_description,
-    long_description_content_type="ext/markdown",
-    url="https://github.com/mtien/PeptideBuilder",
-    download_url="https://github.com/mtien/PeptideBuilder/releases",
-    platforms="Tested on Mac OS X and Windows 10",
-    packages=["PeptideBuilder"],
-    install_requires=["Biopython"],
+    long_description_content_type='ext/markdown',
+    url = 'https://github.com/mtien/PeptideBuilder',
+    download_url = 'https://github.com/mtien/PeptideBuilder/releases',
+    platforms = 'Tested on Mac OS X and Windows 10',
+    packages = ['PeptideBuilder'],
+    install_requires = INSTALL_REQUIRES,
+    extras_require = {
+        'test': TEST_REQUIRES + INSTALL_REQUIRES,
+    },
 )
