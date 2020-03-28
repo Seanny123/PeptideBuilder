@@ -16,7 +16,7 @@ def compare_residues(r1, r2) -> bool:
     return result
 
 
-def compare_to_reference(structure, ref_file):
+def compare_to_reference(structure, ref_file) -> bool:
     parser = PDBParser()
     ref_structure = parser.get_structure("test", str(Path("tests", "pdbs", ref_file)))
 
