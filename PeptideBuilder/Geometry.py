@@ -310,6 +310,7 @@ class LeuGeo(Geo):
             self.N_CA_CB_CG_diangle = rotamers[0]
             self.CA_CB_CG_CD1_diangle = rotamers[1]
             self.CA_CB_CG_CD2_diangle = rotamers[2]
+
         except IndexError:
             print("Input Rotamers List: not long enough")
             self.N_CA_CB_CG_diangle = -60.1

@@ -164,7 +164,6 @@ def makeGly(segID: int, N, CA, C, O, geo: Geo) -> Residue:
     res.add(C)
     res.add(O)
 
-    ##print(res)
     return res
 
 
@@ -221,7 +220,6 @@ def makeSer(segID: int, N, CA, C, O, geo: SerGeo) -> Residue:
 
     ##print(res)
     return res
-
 
 def makeCys(segID: int, N, CA, C, O, geo: CysGeo) -> Residue:
     """Creates a Cysteine residue"""
@@ -564,7 +562,7 @@ def makeLys(segID: int, N, CA, C, O, geo: LysGeo) -> Residue:
     res.add(CE)
     res.add(NZ)
     return res
-
+ 
 
 def makeAsp(segID: int, N, CA, C, O, geo: AspGeo) -> Residue:
     """Creates an Aspartic Acid residue"""
@@ -781,7 +779,7 @@ def makeGln(segID: int, N, CA, C, O, geo: GlnGeo) -> Residue:
     res.add(NE2)
     return res
 
-
+  
 def makeMet(segID: int, N, CA, C, O, geo: MetGeo) -> Residue:
     """Creates a Methionine residue"""
     ##R-Group
@@ -939,7 +937,7 @@ def makePro(segID: int, N, CA, C, O, geo: ProGeo) -> Residue:
 
     return res
 
-
+  
 def makePhe(segID: int, N, CA, C, O, geo: PheGeo) -> Residue:
     """Creates a Phenylalanine residue"""
     ##R-Group
