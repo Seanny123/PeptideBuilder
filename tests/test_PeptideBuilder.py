@@ -66,9 +66,6 @@ def test_add_residue2():
 
 
 def test_make_structure_from_geos():
-    geos = []
-    for aa in "ACDEFGHIKLMNPQRSTVWY":
-        geos.append(Geometry.geometry(aa))
     """Build a helix containing all 20 amino acids from list of geometries.
     The structure should be identical to `extended.pdb`
     """
@@ -87,13 +84,11 @@ def test_make_extended_structure():
 
 
 def test_make_structure_from_geos2():
-    geos = []
-    for aa in "ACDEFGHIKLMNPQRSTVWY":
-        geos.append(Geometry.geometry(aa))
     """
     Build a peptide containing all 20 amino acids from list of geometries.
     The structure should be identical to `extended.pdb`
     """
+    geos = [Geometry.geometry(aa) for aa in "ACDEFGHIKLMNPQRSTVWY"]
     structure = PeptideBuilder.make_structure_from_geos(geos)
     assert compare_to_reference(structure, "extended.pdb")
 
