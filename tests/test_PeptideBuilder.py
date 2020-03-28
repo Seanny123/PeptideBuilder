@@ -11,8 +11,8 @@ def compare_residues(r1, r2) -> bool:
     result = True
     result = result and r1 == r2
     for a1, a2 in zip(r1, r2):
-        # print(a1.coord - a2.coord)
         result = result and (abs(a1.coord - a2.coord) < 0.001).all()
+
     return result
 
 
@@ -25,6 +25,7 @@ def compare_to_reference(structure, ref_file):
     ref_res = list(list(ref_structure[0])[0])
     for r1, r2 in zip(res, ref_res):
         result = result and compare_residues(r1, r2)
+
     return result
 
 
