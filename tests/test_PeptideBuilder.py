@@ -5,7 +5,8 @@ from Bio.PDB import PDBParser
 import os
 
 
-def compare_residues(r1, r2):
+
+def compare_residues(r1, r2) -> bool:
     result = True
     result = result and r1 == r2
     for a1, a2 in zip(r1, r2):
