@@ -260,14 +260,6 @@ class IleGeo(Geo):
             self.CA_CB_CG1_CD1_diangle = 169.8
 
 
-##    def generateRandomRotamers(self):
-##        rotamer_bins=[-60, 60, 180]
-##        tempList=[]
-##        for i in range(0,3):
-##            tempList.append(random.choice(rotamer_bins))
-##        self.inputRotamers(tempList)
-
-
 class LeuGeo(Geo):
     """Geometry of Leucine"""
 
@@ -316,14 +308,6 @@ class LeuGeo(Geo):
             self.N_CA_CB_CG_diangle = -60.1
             self.CA_CB_CG_CD1_diangle = 174.9
             self.CA_CB_CG_CD2_diangle = 66.7
-
-
-##    def generateRandomRotamers(self):
-##        rotamer_bins=[-60, 60, 180]
-##        tempList=[]
-##        for i in range(0,3):
-##            tempList.append(random.choice(rotamer_bins))
-##        self.inputRotamers(tempList)
 
 
 class ThrGeo(Geo):
