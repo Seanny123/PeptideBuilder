@@ -22,7 +22,7 @@ with open("PeptideBuilder/__init__.py", "r") as f:
 
 for line in init:
     if "__version__" in line:
-        __version__ = line.split("'")[-2]
+        __version__ = line.split('"')[-2]
 
 setup(
     name="PeptideBuilder",
