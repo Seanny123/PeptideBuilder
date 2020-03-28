@@ -1,9 +1,10 @@
-import PeptideBuilder
-from PeptideBuilder import Geometry
+from pathlib import Path
+
 from Bio.PDB.Polypeptide import PPBuilder
 from Bio.PDB import PDBParser
-import os
 
+import PeptideBuilder
+from PeptideBuilder import Geometry
 
 
 def compare_residues(r1, r2) -> bool:
@@ -16,9 +17,8 @@ def compare_residues(r1, r2) -> bool:
 
 
 def compare_to_reference(structure, ref_file):
-    file = os.path.join("tests", "pdbs", ref_file)
     parser = PDBParser()
-    ref_structure = parser.get_structure("test", file)
+    ref_structure = parser.get_structure("test", str(Path("tests", "pdbs", ref_file)))
 
     result = True
     res = list(list(structure[0])[0])
