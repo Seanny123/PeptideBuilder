@@ -775,7 +775,7 @@ class MetGeo(Geo):
 
         self.residue_name = "M"
 
-    def inputRotamers(self, rotamer: List[float]):
+    def inputRotamers(self, rotamer: List[float]) -> None:
         try:
             self.N_CA_CB_CG_diangle = rotamer[0]
             self.CA_CB_CG_SD_diangle = rotamer[1]
