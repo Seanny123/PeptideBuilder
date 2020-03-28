@@ -1096,7 +1096,7 @@ class TrpGeo(Geo):
             self.CA_CB_CG_CD2_diangle = self.CA_CB_CG_CD1_diangle - 180.0
 
 
-def geometry(AA: str):
+def geometry(AA: str) -> Geo:
     """Generates the geometry of the requested amino acid.
     The amino acid needs to be specified by its single-letter
     code. If an invalid code is specified, the function
