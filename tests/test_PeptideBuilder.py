@@ -28,8 +28,10 @@ def compare_to_reference(structure, ref_file):
     return result
 
 
-# Build a peptide containing all 20 amino acids
 def test_add_residue():
+    """
+    Build a peptide containing all 20 amino acids
+    """
     structure = PeptideBuilder.initialize_res("A")
     for aa in "CDEFGHIKLMNPQRSTVWY":
         structure = PeptideBuilder.add_residue(structure, aa)
@@ -39,12 +41,13 @@ def test_add_residue():
     pp = next(iter(ppb.build_peptides(structure)))
     assert pp.get_sequence() == "ACDEFGHIKLMNPQRSTVWY"
 
-    # now compare to saved reference structure
     assert compare_to_reference(structure, "extended.pdb")
 
 
-# Build a helix containing all 20 amino acids, with slowly varying backbone angles
 def test_add_residue2():
+    """
+    Build a helix containing all 20 amino acids, with slowly varying backbone angles
+    """
     phi = -60
     psi_im1 = -40
     geo = Geometry.geometry("A")
@@ -60,41 +63,48 @@ def test_add_residue2():
         geo.psi_im1 = psi_im1
         structure = PeptideBuilder.add_residue(structure, geo)
 
-    # now compare to saved reference structure
     assert compare_to_reference(structure, "helix.pdb")
 
 
-# Build a helix containing all 20 amino acids from list of geometries.
-# The structure should be identical to `extended.pdb`
 def test_make_structure_from_geos():
     geos = []
     for aa in "ACDEFGHIKLMNPQRSTVWY":
         geos.append(Geometry.geometry(aa))
+    """Build a helix containing all 20 amino acids from list of geometries.
+    The structure should be identical to `extended.pdb`
+    """
+    geos = [Geometry.geometry(aa) for aa in "ACDEFGHIKLMNPQRSTVWY"]
     structure = PeptideBuilder.make_structure_from_geos(geos)
     assert compare_to_reference(structure, "extended.pdb")
 
 
-# Build a peptide containing all 20 amino acids in extended conformation.
-# The structure should be identical to `extended.pdb`
 def test_make_extended_structure():
+    """
+    Build a peptide containing all 20 amino acids in extended conformation.
+    The structure should be identical to `extended.pdb`
+    """
     structure = PeptideBuilder.make_extended_structure("ACDEFGHIKLMNPQRSTVWY")
     assert compare_to_reference(structure, "extended.pdb")
 
 
-# Build a peptide containing all 20 amino acids from list of geometries.
-# The structure should be identical to `extended.pdb`
 def test_make_structure_from_geos2():
     geos = []
     for aa in "ACDEFGHIKLMNPQRSTVWY":
         geos.append(Geometry.geometry(aa))
+    """
+    Build a peptide containing all 20 amino acids from list of geometries.
+    The structure should be identical to `extended.pdb`
+    """
     structure = PeptideBuilder.make_structure_from_geos(geos)
     assert compare_to_reference(structure, "extended.pdb")
 
 
-# Build a helix containing all 20 amino acids, with slowly varying
-# backbone angles, using make_structure().
-# The resulting structure should be identical to `helix.pdb`
 def test_make_structure():
+    """
+    Build a helix containing all 20 amino acids, with slowly varying
+    backbone angles, using make_structure().
+    The resulting structure should be identical to `helix.pdb`
+    """
     phi_list = []
     psi_im1_list = []
 
@@ -107,11 +117,13 @@ def test_make_structure():
     assert compare_to_reference(structure, "helix.pdb")
 
 
-# Build a helix containing all 20 amino acids, with slowly varying
-# backbone angles, using make_structure(). Now we're changing omega also.
-# The first half of the resulting structure should be identical to
-# `helix.pdb`, while the second half should be slightly different.
 def test_make_structure2():
+    """
+    Build a helix containing all 20 amino acids, with slowly varying
+    backbone angles, using make_structure(). Now we're changing omega also.
+    The first half of the resulting structure should be identical to
+    `helix.pdb`, while the second half should be slightly different.
+    """
     phi_list = []
     psi_im1_list = []
     omega_list = []
