@@ -22,7 +22,7 @@ from Bio.PDB.Chain import Chain
 from Bio.PDB.Model import Model
 from Bio.PDB.Structure import Structure
 from Bio.PDB.vectors import Vector, rotaxis, calc_dihedral
-import numpy
+import numpy as np
 
 from .Geometry import (
     AlaGeo,
@@ -1260,9 +1260,9 @@ def initialize_res(residue: Union[Geo, str]) -> Structure:
     CA_C_length = geo.CA_C_length
     N_CA_C_angle = geo.N_CA_C_angle
 
-    CA_coord = numpy.array([0.0, 0.0, 0.0])
-    C_coord = numpy.array([CA_C_length, 0, 0])
-    N_coord = numpy.array(
+    CA_coord = np.array([0.0, 0.0, 0.0])
+    C_coord = np.array([CA_C_length, 0, 0])
+    N_coord = np.array(
         [
             CA_N_length * math.cos(N_CA_C_angle * (math.pi / 180.0)),
             CA_N_length * math.sin(N_CA_C_angle * (math.pi / 180.0)),
