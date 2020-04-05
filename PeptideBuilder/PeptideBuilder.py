@@ -142,7 +142,6 @@ def calculateCoordinates(
 
 def makeGly(segID: int, N, CA, C, O, geo: Geo) -> Residue:
     """Creates a Glycine residue"""
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "GLY", "    ")
 
     res.add(N)
@@ -164,7 +163,6 @@ def makeAla(segID: int, N, CA, C, O, geo: AlaGeo) -> Residue:
     )
     CB = Atom("CB", carbon_b, 0.0, 1.0, " ", " CB", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "ALA", "    ")
     res.add(N)
     res.add(CA)
@@ -225,7 +223,6 @@ def makeCys(segID: int, N, CA, C, O, geo: CysGeo) -> Residue:
     )
     SG = Atom("SG", sulfur_g, 0.0, 1.0, " ", " SG", 0, "S")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "CYS", "    ")
     res.add(N)
     res.add(CA)
@@ -264,7 +261,6 @@ def makeVal(segID: int, N, CA, C, O, geo: ValGeo) -> Residue:
     )
     CG2 = Atom("CG2", carbon_g2, 0.0, 1.0, " ", " CG2", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "VAL", "    ")
     res.add(N)
     res.add(CA)
@@ -312,7 +308,6 @@ def makeIle(segID: int, N, CA, C, O, geo: IleGeo) -> Residue:
     )
     CD1 = Atom("CD1", carbon_d1, 0.0, 1.0, " ", " CD1", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "ILE", "    ")
     res.add(N)
     res.add(CA)
@@ -361,7 +356,6 @@ def makeLeu(segID: int, N, CA, C, O, geo: LeuGeo) -> Residue:
     )
     CD2 = Atom("CD2", carbon_d2, 0.0, 1.0, " ", " CD2", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "LEU", "    ")
     res.add(N)
     res.add(CA)
@@ -402,7 +396,6 @@ def makeThr(segID: int, N, CA, C, O, geo: ThrGeo) -> Residue:
     )
     CG2 = Atom("CG2", carbon_g2, 0.0, 1.0, " ", " CG2", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "THR", "    ")
     res.add(N)
     res.add(CA)
@@ -474,7 +467,6 @@ def makeArg(segID: int, N, CA, C, O, geo: ArgGeo) -> Residue:
     )
     NH2 = Atom("NH2", nitrogen_h2, 0.0, 1.0, " ", " NH2", 0, "N")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "ARG", "    ")
     res.add(N)
     res.add(CA)
@@ -534,7 +526,6 @@ def makeLys(segID: int, N, CA, C, O, geo: LysGeo) -> Residue:
     )
     NZ = Atom("NZ", nitrogen_z, 0.0, 1.0, " ", " NZ", 0, "N")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "LYS", "    ")
     res.add(N)
     res.add(CA)
@@ -584,7 +575,6 @@ def makeAsp(segID: int, N, CA, C, O, geo: AspGeo) -> Residue:
     )
     OD2 = Atom("OD2", oxygen_d2, 0.0, 1.0, " ", " OD2", 0, "O")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "ASP", "    ")
     res.add(N)
     res.add(CA)
@@ -634,7 +624,6 @@ def makeAsn(segID, N, CA, C, O, geo):
     ND2 = Atom("ND2", nitrogen_d2, 0.0, 1.0, " ", " ND2", 0, "N")
     res = Residue((" ", segID, " "), "ASN", "    ")
 
-    ##Create Residue Data Structure
     res.add(N)
     res.add(CA)
     res.add(C)
@@ -690,7 +679,6 @@ def makeGlu(segID: int, N, CA, C, O, geo: GluGeo) -> Residue:
     )
     OE2 = Atom("OE2", oxygen_e2, 0.0, 1.0, " ", " OE2", 0, "O")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "GLU", "    ")
 
     res.add(N)
@@ -800,7 +788,6 @@ def makeMet(segID: int, N, CA, C, O, geo: MetGeo) -> Residue:
     )
     CE = Atom("CE", carbon_e, 0.0, 1.0, " ", " CE", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "MET", "    ")
     res.add(N)
     res.add(CA)
@@ -865,7 +852,6 @@ def makeHis(segID: int, N, CA, C, O, geo: HisGeo) -> Residue:
     )
     NE2 = Atom("NE2", nitrogen_e2, 0.0, 1.0, " ", " NE2", 0, "N")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "HIS", "    ")
     res.add(N)
     res.add(CA)
@@ -908,7 +894,6 @@ def makePro(segID: int, N, CA, C, O, geo: ProGeo) -> Residue:
     )
     CD = Atom("CD", carbon_d, 0.0, 1.0, " ", " CD", 0, "C")
 
-    ##Create Residue Data Structure
     res = Residue((" ", segID, " "), "PRO", "    ")
 
     res.add(N)
@@ -982,7 +967,6 @@ def makePhe(segID: int, N, CA, C, O, geo: PheGeo) -> Residue:
     )
     CZ = Atom("CZ", carbon_z, 0.0, 1.0, " ", " CZ", 0, "C")
 
-    ##Create Residue Data Structures
     res = Residue((" ", segID, " "), "PHE", "    ")
     res.add(N)
     res.add(CA)
