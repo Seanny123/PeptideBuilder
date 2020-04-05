@@ -124,7 +124,7 @@ def calculateCoordinates(refA, refB, refC, L, ang, di):
             + A * BY * const
         ) / ((B * BZ - BY * G) * denom)
 
-    # GET THE NEW VECTOR from the orgin
+    # Get the new Vector from the origin
     D = Vector(X, Y, Z) + CV
     with warnings.catch_warnings():
         # ignore inconsequential warning
