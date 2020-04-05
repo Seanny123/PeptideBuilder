@@ -50,7 +50,9 @@ from .Geometry import (
 )
 
 
-def calculateCoordinates(refA, refB, refC, L, ang, di):
+def calculateCoordinates(
+    refA: Residue, refB: Residue, refC: Residue, L: float, ang: float, di: float
+) -> np.ndarray:
     AV = refA.get_vector()
     BV = refB.get_vector()
     CV = refC.get_vector()
