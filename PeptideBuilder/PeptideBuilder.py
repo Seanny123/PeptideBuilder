@@ -147,8 +147,6 @@ def makeGly(segID: int, N, CA, C, O, geo: Geo) -> Residue:
     res.add(CA)
     res.add(C)
     res.add(O)
-
-    ##print(res)
     return res
 
 
@@ -202,8 +200,6 @@ def makeSer(segID: int, N, CA, C, O, geo: SerGeo) -> Residue:
     res.add(O)
     res.add(CB)
     res.add(OG)
-
-    ##print(res)
     return res
 
 
